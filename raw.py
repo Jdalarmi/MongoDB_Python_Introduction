@@ -1,6 +1,14 @@
+from dotenv import load_dotenv
+import os 
+
+load_dotenv()
+
 from pymongo import MongoClient
 
-connection_string = "mongodb://admin:admin@localhost:27017/?authSource=admin"
+username = os.getenv("USERNAME")
+password = os.getenv("PASSWORD")
+
+connection_string = f"mongodb://{username}:{password}@localhost:27017/?authSource=admin"
 client = MongoClient(connection_string)
 db_connection = client["meuBanco"]
 
