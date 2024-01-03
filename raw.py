@@ -20,9 +20,6 @@ search_filter = {"estou": "aqui"}
 response = collection.find(search_filter)
 
 
-print(response)
-
-
 for registry in response: print(registry)
 
 collection.insert_one({
